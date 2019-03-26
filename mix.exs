@@ -23,6 +23,8 @@ defmodule Jsonnet.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:credo, "~> 1.0"},
+      {:dialyxir, "~> 1.0.0-rc.4"},
       {:jason, "~> 1.1"},
       {:rustler, "~> 0.20.0"}
     ]

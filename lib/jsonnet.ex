@@ -5,10 +5,10 @@ defmodule Jsonnet do
 
   use Rustler, otp_app: :jsonnet, crate: :jsonnet_bindings
 
-  # When loading a NIF module, dummy clauses for all NIF function are required.
-  # NIF dummies usually just error out when called when the NIF is not loaded, as that should never normally happen.
+  @spec parse_file(String.t()) :: {:ok | :error, String.t()}
   def parse_file(_filename), do: :erlang.nif_error(:nif_not_loaded)
 
+  @spec decode_file(String.t()) :: {:ok | :error, term()}
   def decode_file(filename, opts \\ []) do
     with {:ok, json} <- parse_file(filename) do
       Jason.decode(json, opts)
