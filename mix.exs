@@ -9,7 +9,14 @@ defmodule Jsonnet.MixProject do
       start_permanent: Mix.env() == :prod,
       compilers: [:rustler] ++ Mix.compilers(),
       rustler_crates: [jsonnet_bindings: []],
-      deps: deps()
+      package: package(),
+      deps: deps(),
+      dialyzer: [
+        plt_add_deps: :transitive
+      ],
+      description: """
+      A Jsonnet client for Elixir.
+      """
     ]
   end
 
@@ -20,11 +27,19 @@ defmodule Jsonnet.MixProject do
     ]
   end
 
+  defp package do
+    [
+      maintainers: ["Michael Simpson"],
+      licenses: ["MPL-2.0"],
+      links: %{github: "https://github.com/mjs2600/jsonnet"}
+    ]
+  end
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:credo, "~> 1.0"},
-      {:dialyxir, "~> 1.0.0-rc.4"},
+      {:credo, "~> 1.0", only: [:dev]},
+      {:dialyxir, "~> 1.0.0-rc.4", only: [:dev]},
       {:jason, "~> 1.1"},
       {:rustler, "~> 0.20.0"}
     ]
