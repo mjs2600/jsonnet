@@ -4,7 +4,7 @@ defmodule Jsonnet.MixProject do
   def project do
     [
       app: :jsonnet,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       compilers: [:rustler] ++ Mix.compilers(),
@@ -39,9 +39,9 @@ defmodule Jsonnet.MixProject do
   defp deps do
     [
       {:credo, "~> 1.0", only: [:dev]},
-      {:dialyxir, "~> 1.0.0-rc.4", only: [:dev]},
+      {:dialyxir, "~> 1.0.0-rc.4", only: [:dev], runtime: false},
       {:jason, "~> 1.1"},
-      {:rustler, "~> 0.20.0"}
+      {:rustler, "~> 0.21.0"}
     ]
   end
 end
