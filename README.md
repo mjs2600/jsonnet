@@ -1,7 +1,5 @@
 # Jsonnet
 
-**TODO: Add description**
-
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
@@ -10,7 +8,7 @@ by adding `jsonnet` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:jsonnet, "~> 0.1.0"}
+    {:jsonnet, "~> 0.1.1"}
   ]
 end
 ```
