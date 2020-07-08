@@ -31,7 +31,8 @@ defmodule Jsonnet.MixProject do
     [
       maintainers: ["Michael Simpson"],
       licenses: ["MPL-2.0"],
-      links: %{github: "https://github.com/mjs2600/jsonnet"}
+      links: %{github: "https://github.com/mjs2600/jsonnet"},
+      files: ~w(lib native mix.exs README.md LICENSE.md)
     ]
   end
 
